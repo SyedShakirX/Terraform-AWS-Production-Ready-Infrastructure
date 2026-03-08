@@ -20,13 +20,13 @@ The infrastructure is designed to handle web traffic securely and efficiently ac
 
 ## ✨ Why is this Production-Ready?
 
-This architecture goes beyond a simple tutorial deployment. It implements enterprise best practices across four key pillars:
+This architecture goes beyond a simple deployment. It implements enterprise best practices across four key pillars:
 
 ### 🧩 1. Highly Modular (Infrastructure as Code)
 The Terraform codebase is structured into reusable, logically separated modules (e.g., Networking, Compute, Load Balancing). 
 * **Maintainability:** Changes to the compute layer do not require touching the networking code.
 * **Reusability:** The modules accept variables, allowing the same code to spin up `Dev`, `Staging`, and `Prod` environments by simply changing the `terraform.tfvars` file.
-* **State Management:** Ready to be adapted for remote state backends (like S3 + DynamoDB for state locking).
+* **State Management:** Ready to be adapted for remote state backends (like S3 + S3 state locking).
 
 ### 🌍 2. Highly Available (Fault Tolerant)
 The system is built to survive data center failures.
