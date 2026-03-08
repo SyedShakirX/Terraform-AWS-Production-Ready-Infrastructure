@@ -169,17 +169,14 @@ The compute layer dynamically adapts to user demand to optimize cost and perform
    cd Your-Repo-Name
 2. **Initialize Terraform**
 
-```bash
 terraform init
 3. **Review the Deployment Plan**
 Verifies the resources that will be created without making actual changes.
 
-```bash
 terraform plan
 4. **Apply the Infrastructure**
 Provisions the AWS resources. Type yes when prompted.
 
-```bash
 terraform apply
 5. **Access the Application**
 Once the deployment is complete, Terraform will output the ALB DNS name. Wait 3-5 minutes for the EC2 health checks to pass, then paste the URL into your browser!
@@ -187,5 +184,6 @@ Once the deployment is complete, Terraform will output the ALB DNS name. Wait 3-
 # 🧹 Cleanup
 To avoid incurring unwanted AWS charges, destroy the infrastructure when you are done testing:
 
-```bash
 terraform destroy
+
+Bash
