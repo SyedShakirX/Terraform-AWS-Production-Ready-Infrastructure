@@ -178,6 +178,9 @@ terraform plan
 Provisions the AWS resources. Type yes when prompted.
 
 terraform apply
+
+   ```bash
+
 5. **Access the Application**
 Once the deployment is complete, Terraform will output the ALB DNS name. Wait 3-5 minutes for the EC2 health checks to pass, then paste the URL into your browser!
 
@@ -186,4 +189,4 @@ To avoid incurring unwanted AWS charges, destroy the infrastructure when you are
 
 terraform destroy
 
-Bash
+
