@@ -93,12 +93,6 @@ terraform apply
 5. **Access the Application**
 Once the deployment is complete, Terraform will output the ALB DNS name. Wait 3-5 minutes for the EC2 health checks to pass, then paste the URL into your browser!
 
-Gemini said
-Here is the complete, updated README.md file with those final notes included right at the bottom.
-
-You can copy this entire block, from the first # to the very last line, and paste it directly into your GitHub repository!
-
-Markdown
 # 🚀 Enterprise-Grade AWS Web Architecture via Terraform
 
 > A fully automated, production-ready, and highly available web application infrastructure deployed on AWS using Terraform. 
