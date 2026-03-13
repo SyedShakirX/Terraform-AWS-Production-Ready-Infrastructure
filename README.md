@@ -1,4 +1,4 @@
-# 🚀 Enterprise-Grade AWS Web Architecture via Terraform
+#  Enterprise-Grade AWS Web Architecture via Terraform
 
 > A fully automated, production-ready, and highly available web application infrastructure deployed on AWS using Terraform. 
 
@@ -6,7 +6,7 @@ This project provisions a robust 3-tier-style architecture featuring strict netw
 
 
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 The infrastructure is designed to handle web traffic securely and efficiently across multiple Availability Zones. 
 
@@ -18,23 +18,23 @@ The infrastructure is designed to handle web traffic securely and efficiently ac
 
 ---
 
-## ✨ Why is this Production-Ready?
+##  Why is this Production-Ready?
 
 This architecture goes beyond a simple deployment. It implements enterprise best practices across four key pillars:
 
-### 🧩 1. Highly Modular (Infrastructure as Code)
+###  1. Highly Modular (Infrastructure as Code)
 The Terraform codebase is structured into reusable, logically separated modules (e.g., Networking, Compute, Load Balancing). 
 * **Maintainability:** Changes to the compute layer do not require touching the networking code.
 * **Reusability:** The modules accept variables, allowing the same code to spin up `Dev`, `Staging`, and `Prod` environments by simply changing the `terraform.tfvars` file.
 * **State Management:** Ready to be adapted for remote state backends (like S3 + S3 state locking).
 
-### 🌍 2. Highly Available (Fault Tolerant)
+###  2. Highly Available (Fault Tolerant)
 The system is built to survive data center failures.
 * **Multi-AZ Deployment:** Subnets, NAT Gateways, and the Application Load Balancer are distributed across two Availability Zones (`ap-south-1a` and `ap-south-1b`).
 * **Redundant NATs:** If one AZ goes down, the instances in the other AZ retain internet egress capabilities.
 * **Self-Healing:** The ALB continuously performs Health Checks on Port 8080. If an instance fails, the ALB stops routing traffic to it, and the ASG automatically terminates and replaces it.
 
-### 🔒 3. Highly Secure (Zero-Trust & Least Privilege)
+###  3. Highly Secure (Zero-Trust & Least Privilege)
 Security is baked into the network layer using strict Micro-segmentation.
 * **Network Isolation:** Application servers live in Private Subnets with no Public IPs. They cannot be reached directly from the internet.
 * **Security Group "Chain of Trust":**
@@ -42,7 +42,7 @@ Security is baked into the network layer using strict Micro-segmentation.
   * **App Server SG:** Rejects all traffic *except* Port 8080 specifically originating from the ALB Security Group ID, and Port 22 from the Bastion Host SG ID.
 * **No Hardcoded Secrets:** Dynamic Key Pairs and Terraform variables ensure no sensitive credentials are leaked in the source code.
 
-### 📈 4. Highly Scalable (Dynamic Elasticity)
+###  4. Highly Scalable (Dynamic Elasticity)
 The compute layer dynamically adapts to user demand to optimize cost and performance.
 * **Auto Scaling Group:** Configured with a minimum of 4, a desired capacity of 5, and a maximum of 8 instances.
 * **Target Tracking CPU Policy:** Terraform provisions a CloudWatch metric alarm. If the average CPU utilization of the cluster exceeds **50%**, the ASG automatically spins up new instances. When traffic subsides, it scales back down to save costs.
@@ -50,7 +50,7 @@ The compute layer dynamically adapts to user demand to optimize cost and perform
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 * **Cloud Provider:** Amazon Web Services (AWS)
 * **IaC Tool:** Terraform
 * **Compute:** EC2, Auto Scaling Groups, Launch Templates
@@ -60,7 +60,7 @@ The compute layer dynamically adapts to user demand to optimize cost and perform
 
 ---
 
-## 🚀 How to Deploy
+##  How to Deploy
 
 ### Prerequisites
 * Terraform installed (`>= 1.0.0`)
@@ -93,7 +93,7 @@ terraform apply
 5. **Access the Application**
 Once the deployment is complete, Terraform will output the ALB DNS name. Wait 3-5 minutes for the EC2 health checks to pass, then paste the URL into your browser!
 
-# 🚀 Enterprise-Grade AWS Web Architecture via Terraform
+#  Enterprise-Grade AWS Web Architecture via Terraform
 
 > A fully automated, production-ready, and highly available web application infrastructure deployed on AWS using Terraform. 
 
@@ -101,7 +101,7 @@ This project provisions a robust 3-tier-style architecture featuring strict netw
 
 
 
-## 🏗️ Architecture Overview
+##  Architecture Overview
 
 The infrastructure is designed to handle web traffic securely and efficiently across multiple Availability Zones. 
 
@@ -113,23 +113,23 @@ The infrastructure is designed to handle web traffic securely and efficiently ac
 
 ---
 
-## ✨ Why is this Production-Ready?
+##  Why is this Production-Ready?
 
 This architecture goes beyond a simple tutorial deployment. It implements enterprise best practices across four key pillars:
 
-### 🧩 1. Highly Modular (Infrastructure as Code)
+###  1. Highly Modular (Infrastructure as Code)
 The Terraform codebase is structured into reusable, logically separated modules (e.g., Networking, Compute, Load Balancing). 
 * **Maintainability:** Changes to the compute layer do not require touching the networking code.
 * **Reusability:** The modules accept variables, allowing the same code to spin up `Dev`, `Staging`, and `Prod` environments by simply changing the `terraform.tfvars` file.
 * **State Management:** Ready to be adapted for remote state backends (like S3 + DynamoDB for state locking).
 
-### 🌍 2. Highly Available (Fault Tolerant)
+###  2. Highly Available (Fault Tolerant)
 The system is built to survive data center failures.
 * **Multi-AZ Deployment:** Subnets, NAT Gateways, and the Application Load Balancer are distributed across two Availability Zones (`ap-south-1a` and `ap-south-1b`).
 * **Redundant NATs:** If one AZ goes down, the instances in the other AZ retain internet egress capabilities.
 * **Self-Healing:** The ALB continuously performs Health Checks on Port 8080. If an instance fails, the ALB stops routing traffic to it, and the ASG automatically terminates and replaces it.
 
-### 🔒 3. Highly Secure (Zero-Trust & Least Privilege)
+###  3. Highly Secure (Zero-Trust & Least Privilege)
 Security is baked into the network layer using strict Micro-segmentation.
 * **Network Isolation:** Application servers live in Private Subnets with no Public IPs. They cannot be reached directly from the internet.
 * **Security Group "Chain of Trust":**
@@ -137,7 +137,7 @@ Security is baked into the network layer using strict Micro-segmentation.
   * **App Server SG:** Rejects all traffic *except* Port 8080 specifically originating from the ALB Security Group ID, and Port 22 from the Bastion Host SG ID.
 * **No Hardcoded Secrets:** Dynamic Key Pairs and Terraform variables ensure no sensitive credentials are leaked in the source code.
 
-### 📈 4. Highly Scalable (Dynamic Elasticity)
+###  4. Highly Scalable (Dynamic Elasticity)
 The compute layer dynamically adapts to user demand to optimize cost and performance.
 * **Auto Scaling Group:** Configured with a minimum of 4, a desired capacity of 5, and a maximum of 8 instances.
 * **Target Tracking CPU Policy:** Terraform provisions a CloudWatch metric alarm. If the average CPU utilization of the cluster exceeds **50%**, the ASG automatically spins up new instances. When traffic subsides, it scales back down to save costs.
@@ -145,7 +145,7 @@ The compute layer dynamically adapts to user demand to optimize cost and perform
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 * **Cloud Provider:** Amazon Web Services (AWS)
 * **IaC Tool:** Terraform
 * **Compute:** EC2, Auto Scaling Groups, Launch Templates
@@ -155,7 +155,7 @@ The compute layer dynamically adapts to user demand to optimize cost and perform
 
 ---
 
-## 🚀 How to Deploy
+##  How to Deploy
 
 ### Prerequisites
 * Terraform installed (`>= 1.0.0`)
@@ -202,7 +202,7 @@ The compute layer dynamically adapts to user demand to optimize cost and perform
 
 ---
 
-### 🧹 Cleanup
+###  Cleanup
 
 To avoid incurring unwanted AWS charges, destroy the infrastructure when you are done testing:
 
