@@ -56,7 +56,7 @@ resource "aws_security_group" "security_group_asg_ec2" {
    to_port     = 8080
    protocol    = "tcp"
    #~~~Security Group Referrencing For Least Privilege~~~#
-   security_groups = [aws_security_group.security_group_alb.id]  ################################### Pending###########
+   security_groups = [aws_security_group.security_group_alb.id]  
  }
 
   egress {
